@@ -1,0 +1,147 @@
+
+
+
+.Home-Container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-image: url("../../assets/dog-4494554.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;    
+}
+
+
+.body-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    flex-direction: column;
+    margin: 1rem;
+    z-index: 0;
+    overflow: hidden;
+
+    
+}
+
+.Home-Container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 0;
+
+}
+
+.body-content>.Title {
+    position: relative;
+    font-family: monospace;
+    font-size: 3rem;
+    width: 90%;
+    color: white;
+    text-shadow: 0 0 10px black;
+    text-align: center;
+    animation: InnerAnimation .5s ease-in-out ;
+
+
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: hidden;
+
+}
+
+.button-container>button {
+    all: unset;
+    margin: 1rem;
+    background-color: rgb(45, 255, 244);
+    padding: .8rem;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 1.1rem;
+    cursor: pointer;
+    position: relative;
+    animation: InnerAnimation 1s ease-in-out ;
+}
+
+@keyframes InnerAnimation {
+    from{
+        top: 20rem;
+    }
+    to{
+        top: 0;
+    }
+    
+}
+.button-container>button:nth-child(2) {
+    background-color: black;
+    color: white;
+}
+
+.Imgs {
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    cursor: pointer;
+
+}
+
+.border-left {
+    /* border-radius: 20px 50% 10px 50%; */
+}
+.border-right{
+    /* border-radius:  50% 20px 50% 10px ; */
+
+}
+
+.border-center{
+    /* border-radius:  50%50% 0% 0% ; */
+
+}
+
+.Video-container{
+    position: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.Video-container > video{
+    width: 60%;
+    /* height: 100px; */
+    padding: 2rem;
+    background-color: lightgreen;
+    border-radius: 20px;
+
+
+}
+
+.Video-container > video::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 999;
+}
+
+.overlay{
+    position: absolute;
+}
+
+
+/* ------ */
+

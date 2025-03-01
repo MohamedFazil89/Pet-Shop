@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.NavBar-Container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-family: monospace;
+    /* padding: 1rem 2rem; */
+    /* width: 100%; */
+    background-color: transparent;
+    /* background-color: black; */
+    /* color: white; */
+    /* padding: 1rem; */
+    /* border-radius: 20px; */
+    transition: all 0.3s ease-in-out;
+    margin: 1rem;
+}
+
+
+.NavBar-Container-fixed{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-family: monospace;
+    /* padding: 1rem 2rem; */
+    /* width: 100%; */
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    width: 60%;
+    /* left: 10px; */
+    padding: 20px;
+    border-radius: 20px;
+    margin: 0;
+    top: 10px;
+    right: 240px;
+    background-color: black;
+    color: white;
+    z-index: 10;
+}
+
+
+.NavBar-Container > *, .NavBar-Container-fixed > *{
+    list-style-type: none;
+    color: white;
+
+}
+.logo-container{
+    margin-right: auto;
+
+
+}
+
+.CTA-container{
+    margin-left: auto;
+    background-color: rgb(45, 255, 244);
+    /* background-color: rgb(94, 255, 0); */
+    padding: .6rem;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    transition: all .2s;
+    box-shadow: 0 0 2px black;
+
+}
+.CTA-container > li{
+    display: flex;
+    gap: 10px;
+}
+
+.CTA-container:hover{
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.397);
+}
+.pages{
+    margin: auto;
+    display: flex;
+
+}
+.pages > li{
+    margin-right: 25px;
+    cursor: pointer;
+    transition: all .2s;
+
+}
+.pages > li:nth-child(2){
+    letter-spacing: 0px;
+}
+
+.pages > li:hover{
+    color: rgb(45, 255, 244);
+
+
+}
+
+/* ------------------------------------- */
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .NavBar-Container, .NavBar-Container-fixed {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align to the start on smaller screens */
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .logo-container {
+        margin: 0 0 10px 0; /* Add margin below logo */
+    }
+
+    .pages {
+        flex-direction: column; /* Stack pages vertically */
+        align-items: flex-start; /* Align pages to the start */
+        margin: 10px 0;
+    }
+
+    .pages > li {
+        margin: 5px 0;
+    }
+
+    .CTA-container {
+        margin-top: 10px;
+        width: 100%; /* Make CTA full width */
+        text-align: center; /* Center text */
+    }
+
+    .NavBar-Container-fixed {
+        width: 95%; /* Adjust fixed navbar width */
+        right: 2.5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .NavBar-Container-fixed{
+        font-size: 1rem;
+        padding: 10px;
+    }
+    .CTA-container{
+        font-size: .9rem;
+        padding: .4rem;
+    }
+    .pages{
+        font-size: .9rem;
+    }
+}
