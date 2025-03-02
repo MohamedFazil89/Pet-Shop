@@ -43,11 +43,9 @@ export default function NavBar() {
 
           Cart</li>
       </div>
-      {Card &&
-        <section className="CardMenu">
-        <CardMenu />
-      </section>
-      }
+        <div className="card-con" >
+        <CardMenu width={ Card ? "40%": "0%"}/>
+        </div>
     </nav>
   );
 }
