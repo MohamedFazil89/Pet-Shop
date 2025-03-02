@@ -1,31 +1,27 @@
-import '../styles/Card.scss'
+// src/components/Card.jsx
+import React from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
+import "../styles/Card.scss"
 
-function Card(props) {
+export default function Card({ id, img, title, description, price }) {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart({ id, img, title, price }));
+  };
+
   return (
     <div className="card">
-      <img src={props.img} className="card__img" />
+      <img src={img} className="card__img" alt={title} />
       <div className="card__body">
-        <h2 className="card__title">{props.title}</h2>
-        <p className="card__description">{props.description}</p>
-        <h3 className="card__price">{props.price}</h3>
-        <button className="card__btn">Add to Cart</button>
+        <h2 className="card__title">{title}</h2>
+        <p className="card__description">{description}</p>
+        <h3 className="card__price">${price}</h3>
+        <button className="card__btn" onClick={handleAddToCart}>
+          Add to Cart
+        </button>
       </div>
     </div>
   );
 }
-
-export default Card;
-
-/*
-
-<Card
-        img="https://images.unsplash.com/photo-1612077330269-788066d5ba58?crop=entropy&cs=srgb&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=85"
-        title="Tie Up Boots"
-        description="Fall Favorite • Boots"
-        price="45.00"
-      />
-      
-      
-
-
-*/

@@ -1,4 +1,4 @@
-[
+const CardData = [
     {
       "id": 1,
       "img": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRkQU8blCxzOB0HQ54lRRQ8M9jS_gCFJhflVL5lwn0oOMavU95HOEutlTJqVxFn4r5vKyJqwYRt0k0RkfDyakQaot155eYlwXKZiRHeSpVgBqwg1VbkCOR7jzY",
@@ -70,3 +70,4 @@
     }
   ]
   
+export default CardData;

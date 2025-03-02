@@ -69,4 +69,5 @@
 
 .slider-nav a:hover {
 	opacity: 1;
+	display: flex;
 }

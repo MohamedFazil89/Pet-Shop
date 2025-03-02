@@ -44,7 +44,7 @@ export default function NavBar() {
           Cart</li>
       </div>
         <div className="card-con" >
-        <CardMenu width={ Card ? "40%": "0%"}/>
+        <CardMenu width={ Card ? "40%": "0%"} OpenCard={OpenCard}/>
         </div>
     </nav>
   );
