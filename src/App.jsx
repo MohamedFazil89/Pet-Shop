@@ -4,6 +4,8 @@ import React from "react";
 import ProductList from "./Components/ProductList";
 import Home from "./Components/structures/Home"
 import ImageSlider from "./Components//structures/ImageSlide"
+import About from "./Components/structures/About"
+import Footer from "./Components/structures/footer"
 function App() {
   return (
     <div>
@@ -11,6 +13,8 @@ function App() {
       <Home />
       <ImageSlider />
       <ProductList />
+      <About />
+      <Footer />
     </div>
   );
 }

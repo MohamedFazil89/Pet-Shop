@@ -8,6 +8,8 @@ import Cats from "../../assets/cat-8575641.jpg"
 export default function ImageSlide() {
   return (
     <section className="container">
+		<p>updates</p>
+
 	<div className="slider-wrapper">
 		<div className="slider">
 			<img id="slide-1" src={Dog} alt="3D rendering of an imaginary orange planet in space" />

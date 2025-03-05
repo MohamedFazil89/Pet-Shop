@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../redux/productSlice";
 import Card from "./structures/Card";
+import "./styles/productlist.css"
 
 export default function ProductList() {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ export default function ProductList() {
   }
 
   return (
-    <div className="product-list" style={{ display:"flex", margin: "1rem", flexWrap:"wrap"}}>
+    <div className="product-list">
     {items.map((product) => (
         <Card
           key={product.id}
