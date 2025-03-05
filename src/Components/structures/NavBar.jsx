@@ -33,9 +33,11 @@ export default function NavBar() {
           <img src={Logo} alt=""  width={59}/></li>
       </div>
       <div className="pages">
-        <li>Home</li>
-        <li>Find Love</li>
-        <li>About us</li>
+        <li> <a href="#Home">Home</a> </li>
+        <li> <a href="#Cart">Products</a> </li>
+        <li> <a href="#About">About us</a> </li>
+
+
       </div>
       <div className="CTA-container">
         <li onClick={OpenCard}>

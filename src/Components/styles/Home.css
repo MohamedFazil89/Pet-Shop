@@ -1,7 +1,12 @@
-
-
-
-.Home-Container {
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Home Container with Background Image & Overlay */
+  .Home-Container {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -9,11 +14,22 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: 1;    
-}
-
-
-.body-content {
+    z-index: 1;
+  }
+  
+  .Home-Container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+  
+  /* Content Section */
+  .body-content {
     position: relative;
     display: flex;
     justify-content: center;
@@ -21,127 +37,152 @@
     height: 80vh;
     flex-direction: column;
     margin: 1rem;
-    z-index: 0;
+    z-index: 1; /* Above the overlay */
     overflow: hidden;
-
-    
-}
-
-.Home-Container::before{
+  }
+  
+  .body-content > .Title {
+    position: relative;
+    font-family: monospace;
+    /* Using clamp for fluid typography */
+    font-size: clamp(2rem, 5vw, 3rem);
+    width: 90%;
+    color: white;
+    text-shadow: 0 0 10px black;
+    text-align: center;
+    animation: InnerAnimation 0.5s ease-in-out;
+  }
+  
+  /* Button Container */
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+  
+  .button-container > button {
+    all: unset;
+    margin: 1rem;
+    background-color: rgb(45, 255, 244);
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 1.1rem;
+    cursor: pointer;
+    position: relative;
+    animation: InnerAnimation 1s ease-in-out;
+    transition: transform 0.3s ease;
+  }
+  
+  .button-container > button:hover {
+    transform: scale(1.05);
+  }
+  
+  .button-container > button:nth-child(2) {
+    background-color: black;
+    color: white;
+  }
+  
+  /* Keyframe Animation */
+  @keyframes InnerAnimation {
+    from {
+      top: 20rem;
+    }
+    to {
+      top: 0;
+    }
+  }
+  
+  /* Image Styles */
+  .Imgs {
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    cursor: pointer;
+  }
+  
+  /* (Optional) Border Classes */
+  /* .border-left, .border-right, .border-center { ... } */
+  
+  /* Video Container */
+  .Video-container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
+  
+  .Video-container > video {
+    width: 60%;
+    padding: 2rem;
+    background-color: lightgreen;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Overlay for Video (if needed) */
+  .Video-container > video::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 0;
-
-}
-
-.body-content>.Title {
-    position: relative;
-    font-family: monospace;
-    font-size: 3rem;
-    width: 90%;
-    color: white;
-    text-shadow: 0 0 10px black;
-    text-align: center;
-    animation: InnerAnimation .5s ease-in-out ;
-
-
-}
-
-.button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    overflow: hidden;
-
-}
-
-.button-container>button {
-    all: unset;
-    margin: 1rem;
-    background-color: rgb(45, 255, 244);
-    padding: .8rem;
-    border-radius: 10px;
-    font-family: monospace;
-    font-size: 1.1rem;
-    cursor: pointer;
-    position: relative;
-    animation: InnerAnimation 1s ease-in-out ;
-}
-
-@keyframes InnerAnimation {
-    from{
-        top: 20rem;
-    }
-    to{
-        top: 0;
-    }
-    
-}
-.button-container>button:nth-child(2) {
-    background-color: black;
-    color: white;
-}
-
-.Imgs {
-    width: 300px;
-    height: 300px;
-    margin: 50px;
-    cursor: pointer;
-
-}
-
-.border-left {
-    /* border-radius: 20px 50% 10px 50%; */
-}
-.border-right{
-    /* border-radius:  50% 20px 50% 10px ; */
-
-}
-
-.border-center{
-    /* border-radius:  50%50% 0% 0% ; */
-
-}
-
-.Video-container{
-    position: fixed;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-}
-
-.Video-container > video{
-    width: 60%;
-    /* height: 100px; */
-    padding: 2rem;
-    background-color: lightgreen;
-    border-radius: 20px;
-
-
-}
-
-.Video-container > video::before{
+  }
+  
+  /* Overlay Utility */
+  .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
-    z-index: 999;
-}
-
-.overlay{
-    position: absolute;
-}
-
-
-/* ------ */
-
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .body-content {
+      height: auto;
+      padding: 1rem;
+    }
+  
+    .button-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .button-container > button {
+      font-size: 1rem;
+      padding: 0.6rem;
+      margin: 0.5rem;
+    }
+  
+    .Video-container > video {
+      width: 90%;
+      padding: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .body-content > .Title {
+      font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+  
+    .button-container > button {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+  }
+  

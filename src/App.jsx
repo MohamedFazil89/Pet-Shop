@@ -9,12 +9,21 @@ import Footer from "./Components/structures/footer"
 function App() {
   return (
     <div>
-      {/* <NavBar /> */}
+     <section id="Home">
       <Home />
+      </section>
+      <section id="Updates">
       <ImageSlider />
+      </section>
+      <section id="Cart">
       <ProductList />
+      </section>
+      <section id="About">
       <About />
+      </section>
+      <section id="Footer">
       <Footer />
+      </section>
     </div>
   );
 }

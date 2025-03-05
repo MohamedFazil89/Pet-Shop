@@ -1,159 +1,164 @@
-*{
-    margin: 0;
-    padding: 0;
+:root {
+  --nav-font-size: 1.2rem;
+  --nav-padding: 1rem 2rem;
+  --nav-bg-color: transparent;
+  --nav-fixed-bg: black;
+  --nav-fixed-color: white;
+  --cta-bg: rgb(45, 255, 244);
+  --transition-duration: 0.3s;
+  --border-radius: 20px;
 }
 
+/* Base styles for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Shared Navbar styles */
 .NavBar-Container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1.2rem;
-    font-family: monospace;
-    /* padding: 1rem 2rem; */
-    /* width: 100%; */
-    background-color: transparent;
-    /* background-color: black; */
-    /* color: white; */
-    /* padding: 1rem; */
-    /* border-radius: 20px; */
-    transition: all 0.3s ease-in-out;
-    margin: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--nav-font-size);
+  font-family: monospace;
+  background-color: var(--nav-bg-color);
+  transition: all var(--transition-duration) ease-in-out;
+  margin: 1rem;
+  padding: var(--nav-padding);
 }
 
-
-.NavBar-Container-fixed{
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1.2rem;
-    font-family: monospace;
-    /* padding: 1rem 2rem; */
-    /* width: 100%; */
-    background-color: transparent;
-    transition: all 0.3s ease-in-out;
-    width: 60%;
-    /* left: 10px; */
-    padding: 20px;
-    border-radius: 20px;
-    margin: 0;
-    top: 10px;
-    right: 240px;
-    background-color: black;
-    color: white;
-    z-index: 10;
+/* Fixed Navbar variant (extends base styles) */
+.NavBar-Container-fixed {
+  position: fixed;
+  top: 10px;
+  right: 240px;
+  width: 60%;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  margin: 0;
+  background-color: var(--nav-fixed-bg);
+  color: var(--nav-fixed-color);
+  z-index: 10;
 }
 
-
-.NavBar-Container > *, .NavBar-Container-fixed > *{
-    list-style-type: none;
-    color: white;
-
-}
-.logo-container{
-    margin-right: auto;
-
-
+/* Inherit list and color styling for all children */
+.NavBar-Container > *,
+.NavBar-Container-fixed > * {
+  list-style-type: none;
+  color: inherit;
 }
 
-.CTA-container{
-    margin-left: auto;
-    background-color: rgb(45, 255, 244);
-    /* background-color: rgb(94, 255, 0); */
-    padding: .6rem;
-    border-radius: 10px;
-    cursor: pointer;
-    color: black;
-    transition: all .2s;
-    box-shadow: 0 0 2px black;
-
-}
-.CTA-container > li{
-    display: flex;
-    gap: 10px;
+/* Logo container */
+.logo-container {
+  margin-right: auto;
 }
 
-.CTA-container:hover{
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.397);
-}
-.pages{
-    margin: auto;
-    display: flex;
-
-}
-.pages > li{
-    margin-right: 25px;
-    cursor: pointer;
-    transition: all .2s;
-
-}
-.pages > li:nth-child(2){
-    letter-spacing: 0px;
+/* Call-to-Action container */
+.CTA-container {
+  margin-left: auto;
+  background-color: var(--cta-bg);
+  padding: 0.6rem;
+  border-radius: 10px;
+  cursor: pointer;
+  color: black;
+  transition: all 0.2s;
+  box-shadow: 0 0 2px black;
 }
 
-.pages > li:hover{
-    color: rgb(45, 255, 244);
-
-
+.CTA-container > li {
+  display: flex;
+  gap: 10px;
 }
 
-.card-con{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.CTA-container:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
-/* ------------------------------------- */
+/* Navigation pages */
+.pages {
+  display: flex;
+  margin: auto;
+}
 
+.pages > li {
+  margin-right: 25px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .NavBar-Container, .NavBar-Container-fixed {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align to the start on smaller screens */
-        margin: 10px;
-        padding: 10px;
-    }
+.pages > li:hover {
+  color: var(--cta-bg);
+}
 
-    .logo-container {
-        margin: 0 0 10px 0; /* Add margin below logo */
-    }
+/* Example card container */
+.card-con {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
-    .pages {
-        flex-direction: column; /* Stack pages vertically */
-        align-items: flex-start; /* Align pages to the start */
-        margin: 10px 0;
-    }
+/* ------------------- */
+/* Responsive Adjustments */
 
-    .pages > li {
-        margin: 5px 0;
-    }
+/* 
+   1) Lower the breakpoint to 600px (or 480px) 
+      so tablets keep the desktop layout longer.
+   2) Use flex-wrap instead of column direction 
+      to avoid major layout shifts on small screens.
+*/
+@media (max-width: 600px) {
+  .NavBar-Container,
+  .NavBar-Container-fixed {
+    /* Keep row direction but allow wrapping */
+    flex-wrap: wrap;
+    align-items: center; 
+    margin: 10px;
+    padding: 10px;
+  }
 
-    .CTA-container {
-        margin-top: 10px;
-        width: 100%; /* Make CTA full width */
-        text-align: center; /* Center text */
-    }
+  /* Logo on its own line if needed */
+  .logo-container {
+    margin-bottom: 10px;
+    flex-basis: 100%; /* Force logo to occupy full width if wrapping */
+  }
 
-    .NavBar-Container-fixed {
-        width: 95%; /* Adjust fixed navbar width */
-        right: 2.5%;
-    }
+  /* Let pages stack horizontally until they run out of space, then wrap */
+  .pages {
+    flex-wrap: wrap;
+    margin: 10px 0;
+  }
+
+  .pages > li {
+    margin: 5px 10px 5px 0; /* Adjust spacing */
+  }
+
+  .CTA-container {
+    margin-top: 10px;
+    /* Remove width: 100%; to keep button smaller */
+    text-align: center;
+  }
+
+  .NavBar-Container-fixed {
+    width: 95%;
+    right: 2.5%;
+  }
 }
 
 @media (max-width: 480px) {
-    .NavBar-Container-fixed{
-        font-size: 1rem;
-        padding: 10px;
-    }
-    .CTA-container{
-        font-size: .9rem;
-        padding: .4rem;
-    }
-    .pages{
-        font-size: .9rem;
-    }
+  /* Further reduce font sizes and paddings if needed */
+  .NavBar-Container-fixed {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .CTA-container {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+  .pages {
+    font-size: 0.9rem;
+  }
 }
