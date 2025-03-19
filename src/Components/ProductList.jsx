@@ -1,28 +1,27 @@
 // src/components/ProductList.jsx
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchProducts } from "../redux/productSlice";
 import Card from "./structures/Card";
 import "./styles/productlist.css"
+import axios from "axios"
+import { useEffect, useState } from "react";
 
 export default function ProductList() {
-  const dispatch = useDispatch();
-  const { items, status, error } = useSelector((state) => state.products);
+  const [items, setItem] = useState([])
 
-  useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchProducts());
+  useEffect(() =>{
+    const FetchProduct = async () =>{
+      try{
+        const Response = await axios.get("http://localhost:5000/api/products")
+        console.log(Response.data.Product_Collection )
+        setItem(Response.data.Product_Collection );
+  
+      }catch(err){
+        console.log(err)
+      }
     }
-  }, [status, dispatch]);
+    FetchProduct()
+  },[])
 
-  if (status === "loading") {
-    return <div>Loading products...</div>;
-  }
-
-  if (status === "failed") {
-    return <div>Error: {error}</div>;
-  }
-
+  
   return (
     <div className="product-list">
     {items.map((product) => (

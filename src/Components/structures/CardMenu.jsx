@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart } from "../../redux/cartSlice";
 import "../styles/CardMenu.css";
 
-export default function CardMenu({ width, OpenCard }) {
+export default function CardMenu({ width, OpenCard, BuyNow }) {
   const cartItems = useSelector(state => state.cart.cartItems); // Fetch cart items from Redux
   const total = useSelector(state => state.cart.total); // Fetch total price
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ export default function CardMenu({ width, OpenCard }) {
 
       <div className="total">
         <p>Total: ${total.toFixed(2)}</p>
-        <button>Buy Now</button>
+        <button onClick={BuyNow}>Buy Now</button>
       </div>
     </div>
   );

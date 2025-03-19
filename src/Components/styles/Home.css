@@ -103,54 +103,12 @@
     cursor: pointer;
   }
   
-  /* (Optional) Border Classes */
-  /* .border-left, .border-right, .border-center { ... } */
   
-  /* Video Container */
-  .Video-container {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    height: 80vh;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 999;
-  }
+ 
   
-  .Video-container > video {
-    width: 60%;
-    padding: 2rem;
-    background-color: lightgreen;
-    border-radius: 20px;
-    position: relative;
-    z-index: 1;
-  }
-  
-  /* Overlay for Video (if needed) */
-  .Video-container > video::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 0;
-  }
-  
-  /* Overlay Utility */
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
+ 
+
+
   /* Responsive Adjustments */
   @media (max-width: 768px) {
     .body-content {
