@@ -16,7 +16,7 @@
   margin: 1rem auto;
   margin-top: 3rem;
   position: relative;
-  background: linear-gradient(white, lightgreen, white);
+  background: linear-gradient(white, lightblue, white);
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -79,7 +79,7 @@
 /* Button Styling */
 .card__btn {
   all: unset;
-  background-color: lightgreen;
+  background-color: lightblue;
   padding: 0.5rem 1rem;
   text-align: center;
   color: #333;
@@ -90,7 +90,7 @@
 }
 
 .card__btn:hover {
-  background-color: #32cd32;
+  background-color: rgb(0, 191, 255);
 }
 
 /* Responsive Adjustments */

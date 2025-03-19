@@ -1,0 +1,139 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root Variables (Pet Shop / Kid-Friendly Theme) */
+:root {
+  --bg-container: lightblue;       /* Soft, warm background */
+  --form-bg: #ffffff;            /* Clean white for form */
+  --input-bg: #ffffff;           /* White input background */
+  --primary-color: #ff8a65;      /* Playful soft orange */
+  --primary-dark: #ff7043;       /* Darker orange for hover */
+  --text-color: #333333;         /* Dark text for contrast */
+  --border-radius: 12px;         /* Slightly more rounded corners */
+  --transition-speed: 0.3s;
+}
+
+/* Container for the entire signup page */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-container);
+  padding: 1rem;
+}
+
+/* Styling for the form */
+.signup-form {
+  background-color: var(--form-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  transition: transform var(--transition-speed) ease;
+}
+
+.signup-form > h2 {
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Hover effect to lift the form */
+.signup-form:hover {
+  transform: scale(1.02);
+}
+
+/* Individual form fields */
+.form-field {
+  margin-bottom: 1.5rem;
+}
+
+/* Labels for the form fields */
+.form-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Input fields */
+.form-field input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: border-color var(--transition-speed) ease,
+              box-shadow var(--transition-speed) ease;
+}
+
+/* Input focus state */
+.form-field input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 138, 101, 0.3);
+}
+
+/* Submit button */
+.submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
+  border: none;
+  border-radius: 4px;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Submit button hover state */
+.submit-button:hover {
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary-color));
+}
+
+/* Error message styling */
+.error-message {
+  color: #ff4d4f;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Success message styling */
+.success-message {
+  color: #28a745;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Responsive Adjustments for Mobile Devices */
+@media (max-width: 480px) {
+  .signup-form {
+    padding: 1.5rem;
+  }
+  .form-field input {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+  .submit-button {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+  .error-message,
+  .success-message {
+    font-size: 0.8rem;
+  }
+}

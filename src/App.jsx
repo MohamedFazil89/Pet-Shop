@@ -16,6 +16,8 @@ function App() {
       <ImageSlider />
       </section>
       <section id="Cart">
+      <p className='Updates-title'>Explore</p>
+
       <ProductList />
       </section>
       <section id="About">

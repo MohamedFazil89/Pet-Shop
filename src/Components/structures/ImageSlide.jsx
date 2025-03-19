@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import "../styles/ImageSilder.css";
-import Dog from "../../assets/dog-4494554.jpg";
-import Cat from "../../assets/cat-8612685.jpg";
-import Woman from "../../assets/happyWoman.png";
-import Cats from "../../assets/cat-8575641.jpg";
+
 
 export default function ImageSlide() {
   const sliderRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [Dog, Cat, Woman, Cats];
+  const images = ["https://d1csarkz8obe9u.cloudfront.net/posterpreviews/white-abstract-pet-shop-blog-header-design-template-49cec1367005c2a91db3f7be46b54733_screen.jpg?ts=1721626296",
+     "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/dog-pets-banner-design-template-0dab7b985f19195d70505c13e804bd0e_screen.jpg?ts=1737156522",
+      "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/the-best-dog-food-flyer-design-template-ff64e6d1132c681f3599e6d3e1d700fe_screen.jpg?ts=1737292821",
+       "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/pet-shop-design-template-3249e68fc0ddc67a27a39fbc7ba710ad_screen.jpg?ts=1740988213"];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,7 +27,7 @@ export default function ImageSlide() {
 
   return (
     <section className="container">
-      <p>updates</p>
+      <p className='Updates-title'>UPDATES</p>
       <div className="slider-wrapper">
         <div className="slider" ref={sliderRef}>
           {images.map((src, index) => (

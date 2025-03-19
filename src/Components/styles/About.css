@@ -4,14 +4,14 @@
     font-family: "Open Sans",sans-serif;
     box-sizing: border-box;
 }
-
+/* 
 body{
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #f1f1f1;
-}
+} */
 
 .about-section{
     background: url("../../assets/evening-8429871.jpg") no-repeat left;

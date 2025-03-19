@@ -88,6 +88,10 @@
   cursor: pointer;
   transition: all 0.2s;
 }
+.pages > li > a{
+  color: white;
+
+}
 
 .pages > li:hover {
   color: var(--cta-bg);
